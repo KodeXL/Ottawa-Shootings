@@ -66,7 +66,7 @@ ottawa-shootings-dashboard
 
 ## Project Author
 
-**Olayinka**\
+**Olamide Olayinka**
 
 
 ---
