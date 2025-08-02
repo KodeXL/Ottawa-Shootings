@@ -19,7 +19,7 @@ This dashboard is aimed at supporting **law enforcement agencies, policymakers, 
 
 - **Interactive Dropdown Filters** to select statistics (Yearly or Map based).
 - **Input Field for Year Selection** to view data for specific years (2018-2024).
-- **Dynamic Graph Layouts**: Bar charts, line graphs, and map visualizations adjust based on user selections.
+- **Dynamic Graph Layouts**: Bar charts, pie charts, and map visualizations adjust based on user selections.
 - **Responsive Design** using Flexbox to ensure charts are well-aligned and accessible across screen sizes.
 - **Callback Functions** that manage component interactivity and conditional input field enabling/disabling.
 
