@@ -1,4 +1,4 @@
-# [Project 1 - Ottawa Shooting Incidents Dashboard (2018-2024)] (https://github.com/KodeXL/PROJECTS/tree/main)
+# [Project 1 - Ottawa Shooting Incidents Dashboard (2018-2024)](https://github.com/KodeXL/PROJECTS/tree/main)
 
 # Ottawa Shooting Incidents Dashboard (2018-2024)
 
