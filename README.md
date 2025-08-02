@@ -42,12 +42,12 @@ This dashboard is aimed at supporting **law enforcement agencies, policymakers, 
 ## File Structure
 
 ```
-ottawa-shootings-dashboard/
-├── app.py                # Main Dash Application File
+ottawa-shootings-dashboard
 ├── data/
-│   └── ottawa_shootings.csv  # Cleaned shooting incidents dataset
+│   └── shootingsottawa data (SQL Query)  # Cleaned shooting incidents dataset
 ├── assets/
 │   └── custom_styles.css     # Optional external CSS for styling (if needed)
+├── app.py                # Main Dash Application File
 ├── notebooks/
 │   └── data_cleaning.ipynb   # Jupyter Notebook for data preparation
 └── README.md
