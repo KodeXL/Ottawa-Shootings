@@ -83,10 +83,9 @@ ottawa-shootings-dashboard
 
 ## Screenshot
 
-
-<img width="745" height="924" alt="Screenshot 2025-08-02 at 1 18 21 AM" src="https://github.com/user-attachments/assets/e72047c1-6516-4feb-9c08-455dcebfd48c" />
-<img width="739" height="567" alt="Screenshot 2025-08-02 at 1 17 46 AM" src="https://github.com/user-attachments/assets/1ab07718-3219-4dd8-aa70-f64d0a9ed251" />
-<img width="717" height="951" alt="Screenshot 2025-08-02 at 1 17 19 AM" src="https://github.com/user-attachments/assets/3e988d06-dd16-496a-87c1-bfad86f00256" />
+<img width="891" height="963" alt="Screenshot 2025-08-03 at 7 39 41 PM" src="https://github.com/user-attachments/assets/2ac56684-2b31-4e64-b98f-db09b2c10760" />
+<img width="879" height="645" alt="Screenshot 2025-08-03 at 7 39 10 PM" src="https://github.com/user-attachments/assets/46f683bd-115c-45cb-8d0d-b76e26978275" />
+<img width="891" height="1117" alt="Screenshot 2025-08-03 at 7 38 29 PM" src="https://github.com/user-attachments/assets/a20c1e40-d74a-4adf-b7b0-63218b63ad9a" />
 
 ---
 
