@@ -13,7 +13,7 @@ import mysql.connector
 
 from sqlalchemy import create_engine, text
 user = 'root'
-password = '20mnUXN5N5'
+password = 'XXXXXXXX'
 host = 'localhost'
 database = 'Data'
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
