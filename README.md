@@ -90,7 +90,7 @@ ottawa-shootings-dashboard
 ---
 
 ## Demo Video
-https://www.loom.com/share/716891d412d84d06be72a8b0156bec88?sid=8cd9f3d1-3932-4cc3-92ae-6f10ce5f7a72
+[Video Demo of Application](https://www.loom.com/share/ad9ae4ab7f254611a138c543374ed1a7?sid=6d4ba605-ef05-4c71-9e2a-49d6f2d54985)
 
 
 ---
