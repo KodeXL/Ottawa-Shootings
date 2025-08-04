@@ -13,7 +13,7 @@ import mysql.connector
 
 from sqlalchemy import create_engine, text
 user = 'root'
-password = 'XXXXXXXXXXX'
+password = '20mnUXN5N5'
 host = 'localhost'
 database = 'Data'
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -30,6 +30,13 @@ app = dash.Dash(__name__) #
 colors = {
     'background': '#111111',
     'text': '#7FDBFF'}
+legend_colors = {
+    'FATAL': '#636EFA',
+    'MAJOR': '#EF553B',
+    'MINOR': '#00CC96',
+    'NONE': '#AB63FA',
+    'NOT APPLICABLE': '#19D3F3',
+    'UNKNOWN': '#FFA15A'}
 
 #Ward GeoJson Polygons
 ward_layer  = 'https://open.ottawa.ca/datasets/ottawa::wards-2022-2026.geojson' 
@@ -168,13 +175,15 @@ def update_output_container(selected_statistics, entered_year, entered_loi):
         pivot_month_peryear_df = df_month_peryear.pivot(index='Occurred_Month', columns='Level_of_Injury', values='ID')
         pivot_month_peryear_df = pivot_month_peryear_df.reset_index()
         pivot_month_peryear_df = Sort_Dataframeby_Month(df=pivot_month_peryear_df,monthcolumnname='Occurred_Month')
-        pivot_month_peryear_df = pivot_month_peryear_df.set_index('Occurred_Month')
+        pivot_month_peryear_df_melted = pivot_month_peryear_df.melt(id_vars='Occurred_Month', var_name='Level_of_Injury', value_name='Number_of_Incidents')
 
-        fig = px.bar(pivot_month_peryear_df, x =pivot_month_peryear_df.index, y = pivot_month_peryear_df.columns, 
-                                labels={"variable": "Level of Injury",
-                                        "Occurred_Month" : 'Month Occurred',
-                                        "value" : "Shooting Events"}
-                )
+        fig = px.bar(pivot_month_peryear_df_melted, x ='Occurred_Month', y = 'Number_of_Incidents',
+            color = 'Level_of_Injury',
+            color_discrete_map = legend_colors,
+            labels={"Level_of_Injury": "Level of Injury",
+                "Occurred_Month" : 'Occurred Month',
+                "Number_of_Incidents" : "Shooting Events"}
+        )
         fig.update_layout(
             legend_title_text='',
             plot_bgcolor=colors['background'],
@@ -289,7 +298,7 @@ def update_output_container(selected_statistics, entered_year, entered_loi):
             xanchor="center",
             x=0.5
             ),
-            margin=dict(t=130),
+            margin=dict(t=130)
             #height=1000                                                                                # Adjust height as needed
         
         )
@@ -415,10 +424,15 @@ def update_output_container(selected_statistics, entered_year, entered_loi):
         df_years_LoI = df_LoI[['Occurred_Year', 'Level_of_Injury', 'ID']].groupby(['Occurred_Year','Level_of_Injury']).count()
         df_years_LoI= df_years_LoI.reset_index()
         pivot_df_LoI = df_years_LoI.pivot(index='Occurred_Year', columns='Level_of_Injury', values='ID')
-
-        fig7 = px.bar(pivot_df_LoI, x =pivot_df_LoI.index, y = pivot_df_LoI.columns, 
-            labels={"Occurred_Year" : 'Occurred year',
-            "value" : "Shooting Events"}                                  
+        pivot_df_LoI = pivot_df_LoI.reset_index()
+        pivot_df_LoI_melted = pivot_df_LoI.melt(id_vars='Occurred_Year', var_name='Level_of_Injury', value_name='Number_of_Incidents')
+        
+        fig7 = px.bar(pivot_df_LoI_melted, x ='Occurred_Year', y = 'Number_of_Incidents', 
+            color = 'Level_of_Injury',
+            color_discrete_map = legend_colors, 
+            labels={"Level_of_Injury": "Level of Injury",
+                "Occurred_Year" : 'Occurred Year',
+                "Number_of_Incidents" : "Shooting Events"}                                  
         )
         fig7.update_layout(font ={'size': 20}, hoverlabel= {'font_size': 27}, showlegend=False,
             plot_bgcolor=colors['background'],
@@ -436,12 +450,15 @@ def update_output_container(selected_statistics, entered_year, entered_loi):
         pivot_month_LoI_df = df_month_LoI.pivot(index='Occurred_Month', columns='Level_of_Injury', values='ID')
         pivot_month_LoI_df = pivot_month_LoI_df.reset_index()
         pivot_month_LoI_df = Sort_Dataframeby_Month(df=pivot_month_LoI_df,monthcolumnname='Occurred_Month')
-        pivot_month_LoI_df = pivot_month_LoI_df.set_index('Occurred_Month')
+        #pivot_month_LoI_df = pivot_month_LoI_df.set_index('Occurred_Month')
+        pivot_month_LoI_df_melted = pivot_month_LoI_df.melt(id_vars='Occurred_Month', var_name='Level_of_Injury', value_name='Number_of_Incidents')
         
-        fig8 = px.bar(pivot_month_LoI_df, x =pivot_month_LoI_df.index, y = pivot_month_LoI_df.columns, 
-            labels={"variable": "Level of Injury",
-                "Occurred_Month" : 'Month Occurred',
-                "value" : "Shooting Events"}
+        fig8 = px.bar(pivot_month_LoI_df_melted, x ='Occurred_Month', y = 'Number_of_Incidents',
+            color = 'Level_of_Injury',
+            color_discrete_map = legend_colors, 
+            labels={"Level_of_Injury": "Level of Injury",
+                "Occurred_Month" : 'Occurred Month',
+                "Number_of_Incidents" : "Shooting Events"}
                 )
         fig8.update_layout(
             showlegend=False,
@@ -526,6 +543,8 @@ def update_output_container(selected_statistics, entered_year, entered_loi):
         df_ToD = df['Time_of_Day'].value_counts()
         df_ToD = df_ToD.to_frame('Number of Incidents') 
         fig11 = px.pie(df_ToD, values ='Number of Incidents', names =df_ToD.index, hole=.25,
+            color = df_ToD.index,
+            color_discrete_map = {df_ToD.index[0]: 'red', df_ToD.index[1]:'orange', df_ToD.index[2]:'green', df_ToD.index[3]: 'blue'},
             labels={"index" : 'Time of Day'},
             title= 'Shooting Events by Time of day'
              )
@@ -559,8 +578,10 @@ def update_output_container(selected_statistics, entered_year, entered_loi):
         df_years= df_years.reset_index()
         pivot_df = df_years.pivot(index='Occurred_Year', columns='Level_of_Injury', values='ID')
 
-        fig13 = px.bar(pivot_df, x =pivot_df.index, y = pivot_df.columns, 
-            labels={"Occurred_Year" : 'Occurred year',
+        fig13 = px.bar(pivot_df, x =pivot_df.index, y = pivot_df.columns,
+            color = 'Level_of_Injury',
+            color_discrete_map = legend_colors, 
+            labels={"Occurred_Year" : 'Occurred Year',
             "value" : "Shooting Events"}                                  
         )
         fig13.update_layout(legend_title_text='', font ={'size': 20}, hoverlabel= {'font_size': 27},
