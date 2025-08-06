@@ -13,7 +13,7 @@ import mysql.connector
 
 from sqlalchemy import create_engine, text
 user = 'root'
-password = 'XXXXXXXX'
+password = '20mnUXN5N5'
 host = 'localhost'
 database = 'Data'
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -379,6 +379,8 @@ def update_output_container(selected_statistics, entered_year, entered_loi):
         pivot_Top10N_LoI_df = pivot_Top10N_LoI_df.reindex(index = top10_neighborhoods_LoI.index, columns = pivot_Top10N_LoI_df.columns)
         
         fig5 = px.bar(pivot_Top10N_LoI_df, x =pivot_Top10N_LoI_df.index, y =pivot_Top10N_LoI_df.columns,
+            color = 'Level_of_Injury',
+            color_discrete_map = legend_colors,
             labels={"value" : 'Shooting Events', 'index':'Neighbourhood'})
                         
         fig5.update_layout(
@@ -401,13 +403,15 @@ def update_output_container(selected_statistics, entered_year, entered_loi):
         df_Top10Wards_LoI = df_Top10Wards_LoI.reset_index()
         pivot_Top10Wards_LoI_df = df_Top10Wards_LoI.pivot(index=['Ward','Councillor'], columns='Level_of_Injury', values='ID')
         pivot_Top10Wards_LoI_df = pivot_Top10Wards_LoI_df.reindex(index = top10_wards_LoI.index, columns = pivot_Top10Wards_LoI_df.columns)
-        pivot_Top10Wards_LoI_dfb = pivot_Top10Wards_LoI_df.reset_index()
-        pivot_Top10Wards_LoI_dfb['MultiIndexLabel'] =pivot_Top10Wards_LoI_dfb['Ward'].astype(str) + ' - ' + pivot_Top10Wards_LoI_dfb['Councillor']
-        pivot_Top10Wards_LoI_dfa = pivot_Top10Wards_LoI_df.reset_index().set_index('Ward')
-        pivot_Top10Wards_LoI_dfa = pivot_Top10Wards_LoI_dfa.drop(columns='Councillor')
+        pivot_Top10Wards_LoI_df = pivot_Top10Wards_LoI_df.reset_index()
+        pivot_Top10Wards_LoI_df['MultiIndexLabel'] =pivot_Top10Wards_LoI_df['Ward'].astype(str) + ' - ' + pivot_Top10Wards_LoI_df['Councillor']
+        pivot_Top10Wards_LoI_df = pivot_Top10Wards_LoI_df.drop(columns=['Councillor','Ward'])
+        pivot_Top10Wards_LoI_melted = pivot_Top10Wards_LoI_df.melt(id_vars='MultiIndexLabel', var_name='Level_of_Injury', value_name='Number_of_Incidents')
 
-        fig6 = px.bar(pivot_Top10Wards_LoI_dfb, x ='MultiIndexLabel', y =pivot_Top10Wards_LoI_dfa.columns,
-            labels={"value" : 'Shooting Events', 'MultiIndexLabel':'MultiIndexLabel - Ward, Councillor', 'variable': 'Level of Injury'})
+        fig6 = px.bar(pivot_Top10Wards_LoI_melted, x ='MultiIndexLabel', y ='Number_of_Incidents',
+            color = 'Level_of_Injury',
+            color_discrete_map = legend_colors,
+            labels={"Number_of_Incidents" : 'Shooting Events', 'MultiIndexLabel':'MultiIndexLabel - Ward, Councillor', 'variable': 'Level of Injury'})
             
 
         fig6.update_layout(
@@ -599,20 +603,20 @@ def update_output_container(selected_statistics, entered_year, entered_loi):
             margin=dict(t=130)
         )
 
-        row_4 = html.Div([
+        row_5 = html.Div([
             dcc.Graph(figure=fig10,  style={'flex-basis': '49%'}),
             dcc.Graph(figure=fig11,  style={'flex-basis': '49%'})
         ], style={'display': 'flex','gap': '20px', 'height':'750px', 'justify-content': 'center'})
 
-        row_5 = html.Div([
+        row_6 = html.Div([
             dcc.Graph(figure=fig12,  style={'flex-basis': '49%'}),
             dcc.Graph(figure=fig13,  style={'flex-basis': '49%'})
         ], style={'display': 'flex', 'gap': '20px', 'height':'750px', 'justify-content': 'center'})
         
         return [
             html.Div([
-                html.Div(row_4, style={'margin-bottom': '30px'}),  #Add gap below row_4
-                html.Div(row_5)
+                html.Div(row_5, style={'margin-bottom': '30px'}),  #Add gap below row_5
+                html.Div(row_6)
             ], style={'height': '600px', 'width': '100%','margin-bottom': '40px'}
             ), None        
         ]
