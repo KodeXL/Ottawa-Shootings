@@ -1,5 +1,3 @@
-# [Project 1 - Ottawa Shooting Incidents Dashboard (2018-2024)](https://github.com/KodeXL/PROJECTS/tree/main)
-
 # Ottawa Shooting Incidents Dashboard (2018-2024)
 
 An interactive data visualization dashboard built with **Python Dash** to explore and analyze **shooting incidents in Ottawa, Canada from 2018 to 2024**. This project provides dynamic insights into yearly shooting trends, injury severity levels, and neighbourhood-based statistics, enabling stakeholders to better understand patterns of violence across the city.
