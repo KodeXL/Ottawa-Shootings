@@ -92,6 +92,8 @@ ottawa-shootings-dashboard
 ## Demo Video
 [Video Demo of Application](https://www.loom.com/share/ad9ae4ab7f254611a138c543374ed1a7?sid=6d4ba605-ef05-4c71-9e2a-49d6f2d54985)
 
+# [Project 2 - Ottawa Shooting Incidents Dashboard (2018-2024)](https://github.com/KodeXL/PROJECTS/tree/main)
+
 
 ---
 
