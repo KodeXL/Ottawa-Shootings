@@ -25,6 +25,11 @@ This dashboard is aimed at supporting **law enforcement agencies, policymakers, 
 
 ---
 
+## Demo Video
+[Video Demo of Application](https://www.loom.com/share/4442b59798a6445a952029ec913d4d2f)
+
+---
+
 ## Technologies Used
 
 - **Python**
@@ -84,14 +89,6 @@ ottawa-shootings-dashboard
 <img width="891" height="963" alt="Screenshot 2025-08-03 at 7 39 41 PM" src="https://github.com/user-attachments/assets/2ac56684-2b31-4e64-b98f-db09b2c10760" />
 <img width="879" height="645" alt="Screenshot 2025-08-03 at 7 39 10 PM" src="https://github.com/user-attachments/assets/46f683bd-115c-45cb-8d0d-b76e26978275" />
 <img width="891" height="1117" alt="Screenshot 2025-08-03 at 7 38 29 PM" src="https://github.com/user-attachments/assets/a20c1e40-d74a-4adf-b7b0-63218b63ad9a" />
-
----
-
-## Demo Video
-[Video Demo of Application](https://www.loom.com/share/4442b59798a6445a952029ec913d4d2f)
-
-# [Project 2 - Ottawa Shooting Incidents Dashboard (2018-2024)](https://github.com/KodeXL/PROJECTS/tree/main)
-
 
 ---
 
