@@ -86,10 +86,7 @@ ottawa-shootings-dashboard
 ---
 
 ## 👤 Author
-- **Olamide Olayinka**
+Olamide Olayinka
 - 💼 [LinkedIn](https://www.linkedin.com/in/olamide-olayinka-a8222518/)
-
----
-
-## ⭐ Star this repository if you found it useful!
-
+- 📊 [Portfolo](https://kodexl.github.io/olamideolayinka/)
+- 📧 [Email](mailto:olamideolayinka@cmail.carleton.ca )
