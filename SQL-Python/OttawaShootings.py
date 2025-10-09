@@ -540,12 +540,11 @@ def update_output_container(selected_statistics, entered_year, entered_loi):
         LoI = df['Level_of_Injury'].value_counts()
         fig10 = px.bar(LoI, x = LoI.index, y = LoI.values, text = LoI.values,
             template = 'plotly_dark',
-            title='Shooting Events by Level of Injury',
-            labels={"x": "Level of Injury", "y" : "Shooting Events"}
+            title='Shooting Events by Level of Injury'
         )
         fig10.update_traces(textposition='outside') 
 
-        fig10.update_layout( title_x = 0.25, font ={'size': 25}, hoverlabel= {'font_size': 27} )
+        fig10.update_layout( xaxis_title='Level of Injury', title_x = 0.25, font ={'size': 25}, hoverlabel= {'font_size': 27} )
 
         # Time of day - Overall
         df_ToD = df['Time_of_Day'].value_counts()
