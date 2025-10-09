@@ -560,7 +560,7 @@ def update_output_container(selected_statistics, entered_year, entered_loi):
         fig11.update_layout(title_x = 0.5, font ={'size': 25}, hoverlabel= {'font_size': 27},
             legend=dict(orientation="h",
             yanchor="top",
-            y=1.09,
+            y=1.10,
             xanchor="center",
             x=0.5
             ),
