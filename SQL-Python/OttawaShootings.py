@@ -555,7 +555,7 @@ def update_output_container(selected_statistics, entered_year, entered_loi):
             color = df_ToD.index,
             color_discrete_map = {df_ToD.index[0]: 'red', df_ToD.index[1]:'orange', df_ToD.index[2]:'green', df_ToD.index[3]: 'blue'},
             labels={"index" : 'Time of Day'},
-            title= 'Shooting Events by Time of day \n'
+            title= 'Shooting Events by Time of day \n \n'
              )
         fig11.update_layout(title_x = 0.5, font ={'size': 25}, hoverlabel= {'font_size': 27},
             legend=dict(orientation="h",
