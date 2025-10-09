@@ -541,7 +541,7 @@ def update_output_container(selected_statistics, entered_year, entered_loi):
         fig10 = px.bar(LoI, x = LoI.index, y = LoI.values, text = LoI.values,
             template = 'plotly_dark',
             title='Shooting Events by Level of Injury',
-            labels={"index": "Level of Injury", "y" : "Shooting Events"}
+            labels={"x": "Level of Injury", "y" : "Shooting Events"}
         )
         fig10.update_traces(textposition='outside') 
 
