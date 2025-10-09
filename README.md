@@ -80,9 +80,9 @@ ottawa-shootings-dashboard
 ## Screenshot
 
 ![DashBoard](Assets/1.png)
-![Yealy Statistics](Assets/1.png)
-![Overall Statistics](Assets/1.png)
-![Level of Injury Statistics](Assets/1.png)
+![Yealy Statistics](Assets/2.png)
+![Overall Statistics](Assets/3.png)
+![Level of Injury Statistics](Assets/4.png)
 
 ---
 
