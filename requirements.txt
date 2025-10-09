@@ -19,5 +19,9 @@ yfinance>=0.2.40
 gunicorn
 dash_bootstrap_templates
 sorted_months_weekdays
+json
+requests
+mysql.connector
+sqlalchemy
 
 
