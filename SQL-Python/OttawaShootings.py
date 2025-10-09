@@ -15,16 +15,18 @@ from sqlalchemy import create_engine, text
 
 load_figure_template('CYBORG')
 
-user = 'root'
-password = '20mnUXN5N5'
-host = 'localhost'
-database = 'Data'
+# user = 'root'
+# password = 'XXXXXXXXX'
+# host = 'localhost'
+# database = 'Data'
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Create an SQLAlchemy engine
-engine = create_engine(f'mysql+mysqlconnector://{user}:{password}@{host}/{database}')
+# engine = create_engine(f'mysql+mysqlconnector://{user}:{password}@{host}/{database}')
 
-with engine.connect() as conn:
-    df = pd.read_sql(text("SELECT * FROM shootingsottawa"), con=conn)
+# with engine.connect() as conn:
+#     df = pd.read_sql(text("SELECT * FROM shootingsottawa"), con=conn)
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+df = pd.read_csv("https://raw.githubusercontent.com/KodeXL/Ottawa-Shootings/refs/heads/main/Assets/shootingsottawa.csv")
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Initiaite a dash application
 app = dash.Dash(__name__, external_stylesheets= [dbc.themes.CYBORG]) #  
