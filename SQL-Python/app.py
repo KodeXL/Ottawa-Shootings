@@ -5,6 +5,7 @@ app = Dash(__name__,
            external_stylesheets= [dbc.themes.CYBORG],
            meta_tags=[{'name': 'viewport', 'content': 'width=device-width, initial-scale=1.0'}],
            use_pages=True)
+server = app.server
 
 # define navigation bar
 navbar = dbc.NavbarSimple(
