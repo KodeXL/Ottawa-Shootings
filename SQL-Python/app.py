@@ -1,0 +1,41 @@
+from dash import Dash, dcc, html, page_registry, page_container
+import dash_bootstrap_components as dbc
+
+app = Dash(__name__, 
+           external_stylesheets= [dbc.themes.CYBORG],
+           meta_tags=[{'name': 'viewport', 'content': 'width=device-width, initial-scale=1.0'}],
+           use_pages=True)
+
+# define navigation bar
+navbar = dbc.NavbarSimple(
+    children=[
+        dbc.NavItem(dbc.NavLink("Yearly Stats", href="/", external_link=True, active="exact")),
+        dbc.NavItem(dbc.NavLink("Level of Injury Stats", href="/loi_stats_page", active="exact")),
+    ],
+    brand="Shootings Ottawa Dashboard",
+    brand_href="http://127.0.0.1:8050/",
+    color="dark",
+    dark=True,
+    class_name="main-navbar",
+)
+
+# define footer
+footer  = dbc.Container(
+            dbc.Row(
+                [
+                    dbc.Col(html.A("Olamide Olayinka | Github", href = 'https://github.com/kodexl'))
+                ],
+            ),
+        className = 'footer text-center',
+        fluid = True
+)
+#define the layout of the app
+app.layout = html.Div([
+    dcc.Location(id="url"),
+    navbar,
+    page_container,
+    footer
+])
+
+if __name__ == '__main__':
+    app.run() #debug=True
