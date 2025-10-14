@@ -222,14 +222,14 @@ def yearly_stats_figs(selected_statistics, entered_year):
             dbc.Row([
                 dbc.Col(dcc.Graph(figure=fig, className="charts mb-5"), width={'size': 6}),
                 dbc.Col(dcc.Graph(figure=fig1, className="charts mb-5"), width={'size': 6})
-            ], className="charts mb-5"),
+            ]),
             dbc.Row([
                 dbc.Col(dcc.Graph(figure=fig2, className="charts mb-5"), width={'size': 6}),
                 dbc.Col(dcc.Graph(figure=fig3, className="charts mb-5"), width={'size': 6}) 
-            ], className="charts mb-5"),
+            ]),
             dbc.Row([
                 dbc.Col(dcc.Graph(figure=fig4, className="mapcharts"))
-            ], className="mapcharts")
+            ])
         ]
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
     else:
@@ -476,16 +476,16 @@ def loi_stats_figs(entered_loi):
 
     return [
         dbc.Row([
-            dbc.Col(dcc.Graph(figure=fig5), width=6),
-            dbc.Col(dcc.Graph(figure=fig6), width=6)
-        ], className="charts mb-4"),
+            dbc.Col(dcc.Graph(figure=fig5, className="charts mb-4"), width=6),
+            dbc.Col(dcc.Graph(figure=fig6, className="charts mb-4"), width=6)
+        ]),
         dbc.Row([
             dbc.Col(dcc.Graph(figure=fig7), width=6),
             dbc.Col(dcc.Graph(figure=fig8), width=6)
-        ], className="charts mb-4"),
+        ]),
         dbc.Row([
-            dbc.Col(dcc.Graph(figure=fig9))
-        ], className="mapcharts mt-4")
+            dbc.Col(dcc.Graph(figure=fig9, className="mapcharts mt-4"))
+        ])
     ]
 # else:
 #     return None
