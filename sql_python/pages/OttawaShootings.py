@@ -4,7 +4,7 @@ import dash
 from dash import dcc, html, Input, Output, register_page, callback, no_update
 import dash_bootstrap_components as dbc
 from dash_bootstrap_templates import load_figure_template
-from ..shooting_charts import update_input_container, yearly_stats_figs
+from sql_python.shooting_charts import update_input_container, yearly_stats_figs
 
 load_figure_template('CYBORG')
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
