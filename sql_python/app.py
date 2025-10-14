@@ -14,7 +14,7 @@ navbar = dbc.NavbarSimple(
         dbc.NavItem(dbc.NavLink("Level of Injury Stats", href="/loi_stats_page", active="exact")),
     ],
     brand="Shootings Ottawa Dashboard",
-    brand_href="http://127.0.0.1:8050/",
+    brand_href="https://ottawa-shooting-incidents-data-analysis.onrender.com/",
     color="dark",
     dark=True,
     class_name="main-navbar",
