@@ -79,13 +79,13 @@ ottawa-shootings-dashboard
 
 ## Screenshot
 
-![DashBoard](Assets/1.png)
+![DashBoard](sql_python/assets/1.png)
 ---
-![Yealy Statistics](Assets/2.png)
+![Yealy Statistics](sql_python/assets/2.png)
 ---
-![Overall Statistics](Assets/3.png)
+![Overall Statistics](sql_python/assets/3.png)
 ---
-![Level of Injury Statistics](Assets/4.png)
+![Level of Injury Statistics](sql_python/assets/4.png)
 
 ---
 
