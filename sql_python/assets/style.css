@@ -1,4 +1,6 @@
-
+body {
+  background-color: red !important;
+}
 
 .charts {
     height : 700px;
