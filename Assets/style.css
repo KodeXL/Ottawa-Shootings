@@ -1,0 +1,28 @@
+
+
+.charts {
+    height : 700px
+
+}
+
+.mapcharts {
+    height : 1000px;
+    
+}
+
+.chart-box {
+    margin: 30px;;
+    background-color: #121212;
+    border-radius: 10px;
+    padding: 20px;
+    
+
+}
+
+.main-navbar .navbar-brand {
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-align: left;
+    color: #f8f9fa /*!important; /* ensures readable on dark background */
+}
