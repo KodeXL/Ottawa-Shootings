@@ -313,13 +313,13 @@ def yearly_stats_figs(selected_statistics, entered_year):
                     
             return [
                 dbc.Row([
-                    dbc.Col(dcc.Graph(figure=fig10), width={'size': 6}),
-                    dbc.Col(dcc.Graph(figure=fig11), width={'size': 6})
-                ], className="charts mb-4"),
+                    dbc.Col(dcc.Graph(figure=fig10, className="charts mb-4"), width={'size': 6}),
+                    dbc.Col(dcc.Graph(figure=fig11, className="charts mb-4"), width={'size': 6})
+                ]),
                 dbc.Row([
-                    dbc.Col(dcc.Graph(figure=fig12), width={'size': 6}),
-                    dbc.Col(dcc.Graph(figure=fig13), width={'size': 6})
-                ], className="charts mb-4"),
+                    dbc.Col(dcc.Graph(figure=fig12, className="charts mb-4"), width={'size': 6}),
+                    dbc.Col(dcc.Graph(figure=fig13, className="charts mb-4"), width={'size': 6})
+                ]),
             ]
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 def loi_stats_figs(entered_loi):    
@@ -480,8 +480,8 @@ def loi_stats_figs(entered_loi):
             dbc.Col(dcc.Graph(figure=fig6, className="charts mb-4"), width=6)
         ]),
         dbc.Row([
-            dbc.Col(dcc.Graph(figure=fig7), width=6),
-            dbc.Col(dcc.Graph(figure=fig8), width=6)
+            dbc.Col(dcc.Graph(figure=fig7, className="charts mb-4"), width=6),
+            dbc.Col(dcc.Graph(figure=fig8, className="charts mb-4"), width=6)
         ]),
         dbc.Row([
             dbc.Col(dcc.Graph(figure=fig9, className="mapcharts mt-4"))
