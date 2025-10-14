@@ -3,7 +3,7 @@ from dash import dcc, html, callback, register_page
 import dash_bootstrap_components as dbc
 from dash_bootstrap_templates import load_figure_template
 from dash.dependencies import Input, Output
-from shooting_charts import loi_stats_figs
+from sql_python.shooting_charts import loi_stats_figs
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 load_figure_template('CYBORG')
