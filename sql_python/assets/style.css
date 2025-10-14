@@ -1,7 +1,7 @@
 
 
 .charts {
-    height : 700px
+    height : 700px;
 
 }
 
@@ -24,5 +24,5 @@
     font-weight: 700;
     letter-spacing: 0.5px;
     text-align: left;
-    color: #f8f9fa /*!important; /* ensures readable on dark background */
+    color: #f8f9fa; /*!important; /* ensures readable on dark background */
 }
