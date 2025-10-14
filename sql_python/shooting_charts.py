@@ -22,7 +22,8 @@ import dash_bootstrap_components as dbc
 # with engine.connect() as conn:
 #     df = pd.read_sql(text("SELECT * FROM shootingsottawa"), con=conn)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-df = pd.read_csv("https://raw.githubusercontent.com/KodeXL/Ottawa-Shootings/refs/heads/main/Assets/shootingsottawa.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/KodeXL/Ottawa-Shootings/refs/heads/main/assets/shootingsottawa.csv")
+
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 values = ['FATAL', 'MAJOR', 'MINOR', 'NONE', 'UNKNOWN', 'NOT APPLICABLE']
