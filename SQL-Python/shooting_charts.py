@@ -10,20 +10,21 @@ import dash_bootstrap_components as dbc
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Create an SQLAlchemy engine
-user = 'root'
-password = '20mnUXN5N5'
-host = 'localhost'
-database = 'Data'
+# user = 'root'
+# password = 'XXXXXXXXX'
+# host = 'localhost'
+# database = 'Data'
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Create an SQLAlchemy engine
-engine = create_engine(f'mysql+mysqlconnector://{user}:{password}@{host}/{database}')
+# engine = create_engine(f'mysql+mysqlconnector://{user}:{password}@{host}/{database}')
 
-with engine.connect() as conn:
-    df = pd.read_sql(text("SELECT * FROM shootingsottawa"), con=conn)
-
+# with engine.connect() as conn:
+#     df = pd.read_sql(text("SELECT * FROM shootingsottawa"), con=conn)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#values
+df = pd.read_csv("https://raw.githubusercontent.com/KodeXL/Ottawa-Shootings/refs/heads/main/Assets/shootingsottawa.csv")
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 values = ['FATAL', 'MAJOR', 'MINOR', 'NONE', 'UNKNOWN', 'NOT APPLICABLE']
 
 # Give occurred_months, in the dataframe df, an ordered categorical type
@@ -52,15 +53,6 @@ def update_input_container(selected_statistics):
         return 2018, False                          # Enable year input, disable level of injury dropdown
     else: 
         return True, True                    # Disable both inputs
-    
-# def update_input_container(selected_statistics):
-# if selected_statistics =='Yearly Statistics': 
-#     return 2018, False, None, True                          # Enable year input, disable level of injury dropdown
-# elif selected_statistics == 'Map Statistics':
-#     return None, True, list(legend_colors.keys())[0:2], False     # *list(legend_colors.keys())* Disable year input, enable level of injury multiselect dropdown
-# else: 
-#     return None, True, None, True                          # Disable both inputs
-
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Add computation to callback function and return graph
