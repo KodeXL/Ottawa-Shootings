@@ -11,7 +11,7 @@ server = app.server
 navbar = dbc.NavbarSimple(
     children=[
         dbc.NavItem(dbc.NavLink("Yearly Stats", href="/", external_link=True, active="exact")),
-        dbc.NavItem(dbc.NavLink("Level of Injury Stats", href="/loi_stats_page", active="exact")),
+        dbc.NavItem(dbc.NavLink("Level of Injury Stats", external_link=True, href="/loi_stats_page", active="exact")),
     ],
     brand="Shootings Ottawa Dashboard",
     brand_href="https://ottawa-shooting-incidents-data-analysis.onrender.com/",
