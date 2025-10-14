@@ -1,7 +1,7 @@
 import pandas as pd
 import plotly.graph_objects as go
 import dash
-from dash import dcc, html, Input, Output, register_page, callback, no_update
+from dash import dcc, html, Input, Output, register_page, callback
 import dash_bootstrap_components as dbc
 from dash_bootstrap_templates import load_figure_template
 from sql_python.shooting_charts import update_input_container, yearly_stats_figs
@@ -40,17 +40,6 @@ layout =  dbc.Container([
     dbc.Row([ html.Div(id='graphs-container') 
     ], className="chart-box mb-4 mt-4"),
 ], fluid=True)
-#----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-@callback(
-    Output('dropdown-statistics', 'value'),
-    Input('url', 'href')
-)
-def reset_dropdown_on_home(href):
-    # When user goes to the home page ('/'), reset dropdown to "Yearly Statistics"
-    if href.endswith('/'):
-        return 'Yearly Statistics'
-    return no_update
-
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Add callback decorator                                
 # Define the callback function to update the input container based on the selected statistics
