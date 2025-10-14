@@ -3,6 +3,7 @@ import dash_bootstrap_components as dbc
 
 app = Dash(__name__, 
            external_stylesheets= [dbc.themes.CYBORG],
+           assets_folder="sql_python/assets",
            meta_tags=[{'name': 'viewport', 'content': 'width=device-width, initial-scale=1.0'}],
            use_pages=True)
 server = app.server
