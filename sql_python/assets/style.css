@@ -87,6 +87,10 @@
 } */
 
 @media (max-width: 950px) {
+    .chart-height1 {
+        height: auto;
+    }
+    
     .chart-height2 {
         height: 148vh;
     }
@@ -136,7 +140,7 @@
         height : 80vh !important;   
     }
     .mapcharts .js-plotly-plot {
-        height: 100% !important;
+        height: 745px !important;
     }
     .chart-box {
         margin: 3vw;
