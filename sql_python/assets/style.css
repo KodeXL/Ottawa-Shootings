@@ -76,11 +76,11 @@
   max-width: 200px;
 }
 
-/* .js-plotly-plot .plot-container {
-  height: 100% !important;
+.js-plotly-plot .plot-container {
+  height: 625px !important;
 }
 
-.js-plotly-plot .svg-container {
+/*.js-plotly-plot .svg-container {
   height: 60vh !important;  /* You control the visible chart size here */
  /* width: 100% !important;
 } */
