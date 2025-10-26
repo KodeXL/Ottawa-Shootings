@@ -8,7 +8,7 @@
 }
 
 .chart-height2 {
-    height: 50px;
+    height: 630px;
 }
 
 .js-plotly-plot .hoverlayer .hovertext text {
@@ -37,16 +37,16 @@
 }
 
 .mapcharts {
-    height : calc(100vh - 100px);
-    min-height: 800px;
-    max-height: 1300px;
+    height : 200px;
+    /* min-height: 800px;
+    max-height: 1300px; */
 }
 
 /* Force the inner Plotly container to respect the parent */
-.mapcharts .js-plotly-plot {
+/* .mapcharts .js-plotly-plot {
   height: 100% !important;       /* Make it fill the .mapcharts height */
-  width: 100% !important;
-}
+/*  width: 100% !important;
+} */
 
 .chart-box {
     margin: 2vw;
