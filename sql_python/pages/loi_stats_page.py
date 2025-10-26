@@ -33,13 +33,18 @@ layout =  dbc.Container([
     # ]),
     dbc.Row([
         dbc.Col([
-            dcc.Dropdown(id='loi-statistics', options=dropdown_options_loi, placeholder='Select Level of Injury', 
-                value=[opt['value'] for opt in dropdown_options_loi],
-                multi=True)
-        ], width=5 , style={'color': 'black'})
+            dcc.Dropdown(id='loi-statistics', options=dropdown_options_loi, 
+                         placeholder='Select Level of Injury', 
+                         className="responsive-dropdown-loi", 
+                         value=[opt['value'] for opt in dropdown_options_loi],
+                         multi=True)
+        ], className="d-flex justify-content-center", style={'color': 'black'})
     
-    ], className="mt-4 mb-4", justify='center'),           
-    dbc.Row([ html.Div(id='graph-container')], className="chart-box mt-4 mb-4"),
+    
+    ], className="mb-4 mt-4"),     
+
+    dbc.Row([ html.Div(id='graph-container', className='chart-height1')
+    ], className="mb-4 mt-4"),
 ], fluid=True)
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -51,7 +56,5 @@ layout =  dbc.Container([
 #add function to update the output container
 def update_figs(entered_loi):
     return loi_stats_figs(entered_loi)
-
-
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------
