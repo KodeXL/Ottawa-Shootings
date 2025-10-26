@@ -95,7 +95,7 @@
     }
 
     .mapcharts {
-        height : 130vh !important;   
+        height : auto !important;   
     }
     .mapcharts .js-plotly-plot {
         height: 100% !important;
@@ -137,7 +137,7 @@
     }
 
     .mapcharts {
-        height : 80vh !important;   
+        height : auto !important;   
     }
     .mapcharts .js-plotly-plot {
         height: 745px !important;
