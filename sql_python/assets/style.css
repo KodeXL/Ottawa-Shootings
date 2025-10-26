@@ -1,5 +1,5 @@
 .chart-height {
-    height: 130vh;
+    height: calc(100vh - 150px);
 }
 
 .chart-height1 {
@@ -7,7 +7,7 @@
 }
 
 .chart-height2 {
-    height: 65vh;
+    height: calc(65vh - 80px);
 }
 
 .js-plotly-plot .hoverlayer .hovertext text {
@@ -35,6 +35,40 @@
     font-weight: bold !important;
 }
 
+.mapcharts {
+    height : calc(100vh - 100px);   
+}
+
+.chart-box {
+    margin: 2vw;
+    background-color: #121212;
+    border-radius: 1vw;
+    padding: 2vw;
+    font-size: 1vw;
+
+}
+
+.nav {
+    font-size: 1vw;
+
+    /*color: #f8f9fa !important; /* ensures readable on dark background */
+}
+
+/* Dropdown responsiveness */
+.responsive-dropdown {
+  width: 40vw;              /* 40% of viewport width */
+  min-width: 150px;         /* Prevents shrinking too much */
+  max-width: 350px;         /* Keeps a reasonable upper bound */
+}
+
+
+/* Input responsiveness */
+.responsive-input {
+  width: 40vw;
+  min-width: 100px;
+  max-width: 200px;
+}
+
 @media (max-width: 950px) {
     .chart-height2 {
         height: 120vh;
@@ -51,7 +85,6 @@
 }
 
 }
-
 
 /* Adjust for mobile */
 @media (max-width: 480px) {
@@ -103,38 +136,4 @@
 
 
 
-.mapcharts {
-    height : 100vh;   
-}
 
-.chart-box {
-    margin: 2vw;
-    background-color: #121212;
-    border-radius: 1vw;
-    padding: 2vw;
-    font-size: 1vw;
-
-}
-
-
-
-.nav {
-    font-size: 1vw;
-
-    /*color: #f8f9fa !important; /* ensures readable on dark background */
-}
-
-/* Dropdown responsiveness */
-.responsive-dropdown {
-  width: 40vw;              /* 40% of viewport width */
-  min-width: 150px;         /* Prevents shrinking too much */
-  max-width: 350px;         /* Keeps a reasonable upper bound */
-}
-
-
-/* Input responsiveness */
-.responsive-input {
-  width: 40vw;
-  min-width: 100px;
-  max-width: 200px;
-}
