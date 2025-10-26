@@ -1,13 +1,18 @@
 .chart-height {
     height: calc(100vh - 150px);
+    min-height: 700px;
+    max-height: 1300px;
 }
 
 .chart-height1 {
+    min-height: 600px;
     height: auto;
 }
 
 .chart-height2 {
     height: calc(65vh - 80px);
+    min-height: 450px;
+    max-height: 900px;
 }
 
 .js-plotly-plot .hoverlayer .hovertext text {
@@ -36,7 +41,9 @@
 }
 
 .mapcharts {
-    height : calc(100vh - 100px);   
+    height : calc(100vh - 100px);
+    min-height: 800px;
+    max-height: 1300px;
 }
 
 .chart-box {
