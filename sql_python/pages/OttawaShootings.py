@@ -29,17 +29,30 @@ layout =  dbc.Container([
     # ]),
     dcc.Location(id="url"),
     dbc.Row([
-        dbc.Col([     
-            dcc.Dropdown(id='dropdown-statistics', options=dropdown_options, value = "Yearly Statistics", placeholder='Select Statistics')
-        ], width=5, style={ 'color': 'black'}),
-        dbc.Col([
-            dcc.Input(id='input-year', type='number', placeholder= "Enter Year", min=2018, max=2024)
-        ], width=1)
-    ], className="mt-4 mb-4", justify='center'),           
+        dbc.Col(    
+            dcc.Dropdown(id='dropdown-statistics', options=dropdown_options, value = "Yearly Statistics", placeholder='Select Statistics', className="responsive-dropdown"),
+            className="d-flex justify-content-end",
+            style={ 'color': 'black'}),
+        dbc.Col(
+            dcc.Input(id='input-year', type='number', placeholder= "Enter Year", min=2018, max=2024, className="responsive-input"),
+            className="d-flex justify-content-start"
+        )
+    ], className="mt-4 mb-4"),           
     
-    dbc.Row([ html.Div(id='graphs-container') 
-    ], className="chart-box mb-4 mt-4"),
+    dbc.Row([ html.Div(id='graphs-container', className='chart-height1') 
+    ], className="mb-4 mt-4"),
 ], fluid=True)
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+@callback(
+    Output('dropdown-statistics', 'value'),
+    Input('url', 'href')
+)
+def reset_dropdown_on_home(href):
+    # When user goes to the home page ('/'), reset dropdown to "Yearly Statistics"
+    if href.endswith('/'):
+        return 'Yearly Statistics'
+    return no_update
+
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Add callback decorator                                
 # Define the callback function to update the input container based on the selected statistics
