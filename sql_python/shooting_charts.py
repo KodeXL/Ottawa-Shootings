@@ -309,7 +309,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
             fig10 = px.bar(LoI, x = LoI.index, y = LoI.values, text = LoI.values,
                 template = 'plotly_dark',
                 title='Events by Level of Injury',
-                labels={"index": "Level of Injury", "y" : "Number of Incidents"}
+                labels={"Level_of_Injury": "Level of Injury", "y" : "Number of Incidents"}
             )
             fig10.update_traces(textposition='outside',
                                 hovertemplate=
