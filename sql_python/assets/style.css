@@ -1,26 +1,140 @@
+.chart-height {
+    height: 130vh;
+}
+
+.chart-height1 {
+    height: auto;
+}
+
+.chart-height2 {
+    height: 65vh;
+}
+
+.js-plotly-plot .hoverlayer .hovertext text {
+  font-size: 0.8vw !important;              /* scales with screen width */
+}
+
+/* For all charts */
 .charts {
-    height : 700px;
-
+    font-size: 1.5vw;        /* scales with screen width */
 }
 
-.mapcharts {
-    height : 1000px;
-    
-}
-
-.chart-box {
-    margin: 30px;;
-    background-color: #121212;
-    border-radius: 10px;
-    padding: 20px;
-    
-
+.responsive-dropdown-loi {
+    width: 30vw;              /* 30% of viewport width */
 }
 
 .main-navbar .navbar-brand {
-    font-size: 60px;
+    font-size: 3vw;
     font-weight: 700;
     letter-spacing: 0.5px;
-    text-align: left;
-    color: #f8f9fa; /*!important; /* ensures readable on dark background */
+    color: #f8f9fa /*!important; /* ensures readable on dark background */
+}
+
+.dash-graph .gtitle {
+    font-size: 20px !important; 
+    font-weight: bold !important;
+}
+
+@media (max-width: 950px) {
+    .chart-height2 {
+        height: 120vh;
+    }
+    .js-plotly-plot .hoverlayer .hovertext text {
+        font-size: 1.5vw !important;
+    }
+
+    .mapcharts {
+        height : 130vh !important;   
+    }
+    .responsive-dropdown-loi {
+        width: 70vw;              /* 90% of viewport width */
+}
+
+}
+
+
+/* Adjust for mobile */
+@media (max-width: 480px) {
+    .charts {
+        font-size: 2.2vw;
+    }
+
+    .js-plotly-plot .hoverlayer .hovertext text {
+        font-size: 3.5vw !important;
+    }
+
+    .js-plotly-plot .legend {
+        white-space: nowrap !important;
+        
+    }
+    .chart-height2 {
+        height: 75vh;
+    }
+    .js-plotly-plot .legendtext {
+        font-size: 2.5vw !important;
+    }
+
+    .dash-graph .gtitle {
+        font-size: 3.5vw !important;
+        font-weight: bold !important;
+    }
+
+    .mapcharts {
+        height : 80vh !important;   
+    }
+    .chart-box {
+        margin: 3vw;
+        padding: 3vw;
+        border-radius: 2vw;
+        font-size: 2.5vw;
+        height: auto;       
+    }
+    .responsive-dropdown-loi {
+        width: 85vw;              /* 90% of viewport width */
+        /* box-sizing: border-box;
+        margin-right: 4vw; */
+
+    }
+    .main-navbar .navbar-brand {
+        font-size: 6vw;
+
+    }
+}
+
+
+
+.mapcharts {
+    height : 100vh;   
+}
+
+.chart-box {
+    margin: 2vw;
+    background-color: #121212;
+    border-radius: 1vw;
+    padding: 2vw;
+    font-size: 1vw;
+
+}
+
+
+
+.nav {
+    font-size: 1vw;
+
+    /*color: #f8f9fa !important; /* ensures readable on dark background */
+}
+
+/* Dropdown responsiveness */
+.responsive-dropdown {
+  width: 40vw;              /* 40% of viewport width */
+  min-width: 150px;         /* Prevents shrinking too much */
+  max-width: 350px;         /* Keeps a reasonable upper bound */
+}
+
+
+/* Input responsiveness */
+.responsive-input {
+  width: 40vw;
+  min-width: 100px;
+  max-width: 200px;
 }
