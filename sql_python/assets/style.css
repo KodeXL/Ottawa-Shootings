@@ -125,7 +125,7 @@
         
     }
     .chart-height2 {
-        height: 68vh;
+        height: auto;
     }
     .js-plotly-plot .legendtext {
         font-size: 2.5vw !important;
