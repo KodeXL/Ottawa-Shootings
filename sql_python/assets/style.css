@@ -93,7 +93,7 @@
 
 @media (max-width: 950px) {
     .chart-height2 {
-        height: 120vh;
+        height: 148vh;
     }
     .js-plotly-plot .hoverlayer .hovertext text {
         font-size: 1.5vw !important;
@@ -126,7 +126,7 @@
         
     }
     .chart-height2 {
-        height: 75vh;
+        height: 68vh;
     }
     .js-plotly-plot .legendtext {
         font-size: 2.5vw !important;
