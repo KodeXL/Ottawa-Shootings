@@ -92,7 +92,7 @@
     }
     
     .chart-height2 {
-        height: 148vh;
+        height: auto;
     }
     .js-plotly-plot .hoverlayer .hovertext text {
         font-size: 1.5vw !important;
