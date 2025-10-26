@@ -10,7 +10,7 @@
 }
 
 .chart-height2 {
-    height: calc(65vh - 80px);
+    height: calc(65vh - 50px);
     min-height: 450px;
     max-height: 900px;
 }
