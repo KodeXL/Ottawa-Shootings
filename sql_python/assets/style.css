@@ -7,7 +7,7 @@
 }
 
 .chart-height2 {
-    height: 630px;
+    height: auto;
 }
 
 .js-plotly-plot .hoverlayer .hovertext text {
