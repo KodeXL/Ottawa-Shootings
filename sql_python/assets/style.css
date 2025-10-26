@@ -38,10 +38,10 @@
 }
 
 /* Force the inner Plotly container to respect the parent */
-/* .mapcharts .js-plotly-plot {
-  height: 100% !important;       /* Make it fill the .mapcharts height */
-/*  width: 100% !important;
-} */
+.mapcharts .js-plotly-plot {
+  height: 500px !important;       /* Make it fill the .mapcharts height */
+/*  width: 100% !important; */
+} 
 
 .chart-box {
     margin: 2vw;
@@ -73,9 +73,9 @@
   max-width: 200px;
 }
 
-/* .js-plotly-plot .plot-container {
+.js-plotly-plot .plot-container {
   height: 625px !important;
-} */
+} 
 
 /*.js-plotly-plot .svg-container {
   height: 60vh !important;  /* You control the visible chart size here */
