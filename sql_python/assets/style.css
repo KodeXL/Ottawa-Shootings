@@ -3,7 +3,7 @@
 }
 
 .chart-height1 {
-    height: 1920px;
+    height: auto;
 }
 
 .chart-height2 {
@@ -36,7 +36,7 @@
 }
 
 .mapcharts {
-    height : 200px;
+    height : auto;
     /* min-height: 800px;
     max-height: 1300px; */
 }
