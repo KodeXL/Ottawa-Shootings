@@ -46,6 +46,12 @@
     max-height: 1300px;
 }
 
+/* Force the inner Plotly container to respect the parent */
+.mapcharts .js-plotly-plot {
+  height: 100% !important;       /* Make it fill the .mapcharts height */
+  width: 100% !important;
+}
+
 .chart-box {
     margin: 2vw;
     background-color: #121212;
@@ -96,6 +102,9 @@
     .mapcharts {
         height : 130vh !important;   
     }
+    .mapcharts .js-plotly-plot {
+        height: 100% !important;
+    }
     .responsive-dropdown-loi {
         width: 70vw;              /* 90% of viewport width */
 }
@@ -130,6 +139,9 @@
 
     .mapcharts {
         height : 80vh !important;   
+    }
+    .mapcharts .js-plotly-plot {
+        height: 100% !important;
     }
     .chart-box {
         margin: 3vw;
