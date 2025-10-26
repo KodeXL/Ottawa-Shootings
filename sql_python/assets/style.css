@@ -118,6 +118,10 @@
 
     .js-plotly-plot .legend {
         white-space: nowrap !important;
+
+    .chart-height1 {
+        height: auto;
+    }
         
     }
     .chart-height2 {
