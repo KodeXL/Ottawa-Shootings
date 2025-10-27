@@ -291,11 +291,11 @@ def yearly_stats_figs(selected_statistics, entered_year):
             dbc.Row([
                 dbc.Col(dcc.Graph( figure=fig2),
                         xs=12, sm=12, md=12, lg=6, xl=6,
-                        className="chart-height2"
+                        className="p-3 chart-height2"
                 ),
                 dbc.Col(dcc.Graph( figure=fig3), 
                         xs=12, sm=12, md=12, lg=6, xl=6,
-                        className="chart-height2"
+                        className="p-3 chart-height2"
                 ) 
             ], className="mb-4 g-4 "),
             dbc.Row([
