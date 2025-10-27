@@ -88,6 +88,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
                 "Number_of_Incidents" : "Number of Incidents"}
         )
         fig.update_layout(
+            font=dict(size=14),
             legend_title_text='', 
             title={'text': f"Events by Month <br> Grouped by Level of Injury in {entered_year} \n",
                 'x': 0.5, 'y': 0.97, 'pad':{'t':30, 'b':10},                                                                             # Center the title horizontally
@@ -156,6 +157,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
             }
         )
         fig2.update_layout(
+            font=dict(size=14),
             legend_title_text='',
             title={'text': f"Events by Neighbourhood <br> Grouped by Level of Injury in {entered_year}",
                 'x': 0.5,'y': 0.97, 'pad':{'t':30, 'b':10},                                                  # Center the title horizontally
