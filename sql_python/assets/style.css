@@ -39,18 +39,18 @@
 
 /* Force the inner Plotly container to respect the parent */
 .mapcharts .js-plotly-plot {
-  height: 500px !important;       /* Make it fill the .mapcharts height */
+  height: 750px !important;       /* Make it fill the .mapcharts height */
 /*  width: 100% !important; */
 } 
 
-.chart-box {
+/* .chart-box {
     margin: 2vw;
     background-color: #121212;
     border-radius: 1vw;
     padding: 2vw;
     font-size: 1vw;
 
-}
+} */
 
 .nav {
     font-size: 1vw;
@@ -142,13 +142,13 @@
     .mapcharts .js-plotly-plot {
         height: 745px !important;
     }
-    .chart-box {
+    /* .chart-box {
         margin: 3vw;
         padding: 3vw;
         border-radius: 2vw;
         font-size: 2.5vw;
         height: auto;       
-    }
+    } */
     .responsive-dropdown-loi {
         width: 85vw;              /* 90% of viewport width */
         /* box-sizing: border-box;
