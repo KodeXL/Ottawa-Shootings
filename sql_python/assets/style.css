@@ -10,10 +10,6 @@
   font-size: 0.8vw !important;              /* scales with screen width */
 }
 
-/* For all charts */
-.charts {
-    font-size: 1.5vw;        /* scales with screen width */
-}
 
 .responsive-dropdown-loi {
     width: 30vw;              /* 30% of viewport width */
@@ -33,29 +29,15 @@
 
 .mapcharts {
     height : auto;
-    /* min-height: 800px;
-    max-height: 1300px; */
 }
 
 /* Force the inner Plotly container to respect the parent */
 .mapcharts .js-plotly-plot {
   height: 750px !important;       /* Make it fill the .mapcharts height */
-/*  width: 100% !important; */
 } 
-
-/* .chart-box {
-    margin: 2vw;
-    background-color: #121212;
-    border-radius: 1vw;
-    padding: 2vw;
-    font-size: 1vw;
-
-} */
 
 .nav {
     font-size: 1vw;
-
-    /*color: #f8f9fa !important; /* ensures readable on dark background */
 }
 
 /* Dropdown responsiveness */
@@ -76,11 +58,6 @@
 .js-plotly-plot .plot-container {
   height: 625px !important;
 } 
-
-/*.js-plotly-plot .svg-container {
-  height: 60vh !important;  /* You control the visible chart size here */
- /* width: 100% !important;
-} */
 
 @media (max-width: 950px) {
     .chart-height1 {
@@ -108,9 +85,6 @@
 
 /* Adjust for mobile */
 @media (max-width: 480px) {
-    .charts {
-        font-size: 2.2vw;
-    }
 
     .js-plotly-plot .hoverlayer .hovertext text {
         font-size: 3.5vw !important;
@@ -142,17 +116,9 @@
     .mapcharts .js-plotly-plot {
         height: 745px !important;
     }
-    /* .chart-box {
-        margin: 3vw;
-        padding: 3vw;
-        border-radius: 2vw;
-        font-size: 2.5vw;
-        height: auto;       
-    } */
+  
     .responsive-dropdown-loi {
         width: 85vw;              /* 90% of viewport width */
-        /* box-sizing: border-box;
-        margin-right: 4vw; */
 
     }
     .main-navbar .navbar-brand {
