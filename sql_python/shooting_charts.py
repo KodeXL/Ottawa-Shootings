@@ -99,7 +99,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
             xanchor="center",
             x=0.48
             ),
-            margin=dict(t=160, r=40, l=120)
+            margin=dict(t=160, r=40, l=70)
         )
         fig.update_traces(hovertemplate=
                             "Level of Injury: %{fullData.name}<br>" +
@@ -131,7 +131,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
                 'x': 0.5,                                                                               # Center the title horizontally
                 'xanchor': 'center'                                                                     # Anchor the title to the center
             },
-            margin=dict(t=98, r=40, l=120)
+            margin=dict(t=98, r=40, l=70)
         )       
         
         # Select data based on the entered year
@@ -171,7 +171,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
             xanchor="center",
             x=0.5
             ),
-            margin=dict(t=160, r=40, l=120)
+            margin=dict(t=160, r=40, l=70)
         )
         fig2.update_xaxes(
             tickvals=pivot_Top10N_df_melted['ShortLabel'],
@@ -228,7 +228,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
             xanchor="center",
             x=0.48
             ), 
-            margin=dict(t=160, r=40, l=120)                                                                             # Adjust height as needed
+            margin=dict(t=160, r=40, l=70)                                                                             # Adjust height as needed
         )
 
         fig3.update_xaxes(
@@ -327,7 +327,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
                           'x': 0.5, 
                           #'y': 0.97, 'pad':{'t':30, 'b':10}
                       },   
-                margin=dict(r=40, l=120)
+                margin=dict(r=40, l=70)
             )
 
             fig10.update_xaxes(tickangle=45)
@@ -349,7 +349,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
                 xanchor="center",
                 x=0.5
                 ),
-                margin=dict(t=160, l=120),
+                margin=dict(t=160, l=70),
                 #height=1000  # Adjust height as needed
             )
             fig11.update_traces(hovertemplate=
@@ -375,7 +375,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
                                 
 
             fig12.update_layout(title_x= 0.5, font=dict(size=14),
-                                margin=dict(r=40, l=120)
+                                margin=dict(r=40, l=70)
         
             )     
 
@@ -411,7 +411,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
                 xanchor="center",
                 x=0.5
                 ),
-                margin=dict(t=160, r=40, l=120)
+                margin=dict(t=160, r=40, l=70)
             )
 
             fig13.update_traces(
@@ -495,7 +495,7 @@ def loi_stats_figs(entered_loi):
         title={'text': f'{title_text} <br> Events by Neighbourhood',
             'x': 0.5, 'y': 0.93,                                                                               # Center the title horizontally
             'xanchor': 'center'},                                                                    # Anchor the title to the center}
-        margin=dict(t=120, r=40, l=120 ),
+        margin=dict(t=120, r=40, l=70 ),
         showlegend=False
     )
     fig5.update_xaxes(
@@ -555,7 +555,7 @@ def loi_stats_figs(entered_loi):
         title={'text': f'{title_text} <br> Events by Ward and Councillor ',
             'x': 0.5, 'y':0.93,                                                                               # Center the title horizontally
             'xanchor': 'center'},                                                                   # Anchor the title to the center
-        margin=dict(t=120, r=40, l=120 ),
+        margin=dict(t=120, r=40, l=70 ),
         showlegend=False)
     
     fig6.update_xaxes(
@@ -595,7 +595,7 @@ def loi_stats_figs(entered_loi):
         title={'text': f'{title_text} <br> Events by Year ',
             'x': 0.5, 'y': 0.93,                                                                              
             'xanchor': 'center'},
-            margin=dict(t=120, r=40, l=120 )
+            margin=dict(t=120, r=40, l=70 )
     )
 
     fig7.update_traces(
@@ -628,7 +628,7 @@ def loi_stats_figs(entered_loi):
             'x': 0.5,  'y': 0.93,                                                                               # Center the title horizontally
             'xanchor': 'center'                                                                     # Anchor the title to the center
         },
-        margin=dict(t=120, r=40, l=120),
+        margin=dict(t=120, r=40, l=70),
     )
 
     fig8.update_traces(hovertemplate=
