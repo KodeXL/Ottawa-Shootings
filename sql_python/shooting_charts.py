@@ -107,7 +107,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
                             "Number of Incidents: %{y}<extra></extra>"
         ) 
 
-        fig.update_xaxes(tickangle=-45)
+        fig.update_xaxes(tickangle=45)
 
         # Select data based on the entered year
         df_division_peryear = df_peryear[['Division', 'Level_of_Injury']].groupby('Division').count()
@@ -175,7 +175,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
         )
         fig2.update_xaxes(
             tickvals=pivot_Top10N_df_melted['ShortLabel'],
-            tickangle=-45
+            tickangle=45
         )
         fig2.update_traces(
             customdata=pivot_Top10N_df_melted[['FullLabel']].values,
@@ -233,7 +233,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
 
         fig3.update_xaxes(
             tickvals=pivot_Top10Wards_peryear_df_melted['ShortLabel'],
-            tickangle=-45
+            tickangle=45
         )
 
         fig3.update_traces(
@@ -330,7 +330,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
                 margin=dict(r=40, l=120)
             )
 
-            fig10.update_xaxes(tickangle=-45)
+            fig10.update_xaxes(tickangle=45)
 
             # Time of day - Overall
             df_ToD = df['Time_of_Day'].value_counts()
@@ -501,7 +501,7 @@ def loi_stats_figs(entered_loi):
     fig5.update_xaxes(
             tickvals=pivot_Top10N_LoI_df_melted['ShortLabel'],
             #ticktext=[label.replace(" - ", "<br>") for label in pivot_Top10N_LoI_df_melted['Neighbourhood']],
-            tickangle=-45
+            tickangle=45
     )
     
     fig5.update_traces(
@@ -560,7 +560,7 @@ def loi_stats_figs(entered_loi):
     
     fig6.update_xaxes(
             tickvals=pivot_Top10Wards_LoI_melted['ShortLabel'],
-            tickangle=-45
+            tickangle=45
     )
 
     fig6.update_traces(
@@ -636,7 +636,7 @@ def loi_stats_figs(entered_loi):
                             "Month: %{x}<br>" +
                             "Number of Incidents: %{y}<extra></extra>"
     ) 
-    fig8.update_xaxes(tickangle=-45)
+    fig8.update_xaxes(tickangle=45)
 
     fig9 = px.scatter_map(df_LoI,
         template = 'plotly_dark',
