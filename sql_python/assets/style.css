@@ -6,9 +6,9 @@
     height: auto;
 }
 
-.js-plotly-plot{
+/* .js-plotly-plot{
 padding-left: 25px;
-}
+} */
 /* Global chart text size */
 .js-plotly-plot text {
   font-size: 0.9em !important;   /* scales with screen width */
