@@ -100,7 +100,7 @@
     }
 
     .js-plotly-plot text {
-        font-size: 50vw !important;   /* slightly larger for mobile */
+        font-size: 2.6vw !important;   /* slightly larger for mobile */
     }
 
     .chart-height1 {
