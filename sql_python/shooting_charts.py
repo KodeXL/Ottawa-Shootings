@@ -123,7 +123,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
                             "Number of Incidents: %{y}<extra></extra>"
         ) 
 
-        fig1.update_layout( 
+        fig1.update_layout( font=dict(size=14),
             title={
                 'text': f"Events by Divison in {entered_year}",
                 'x': 0.5,                                                                               # Center the title horizontally
@@ -213,7 +213,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
             }
         )
                     
-        fig3.update_layout(
+        fig3.update_layout(font=dict(size=14),
             legend_title_text='',
             #hoverlabel= {'font_size': 20},
             title={'text': f"Events by Ward and Councillor <br> Grouped by Level of Injury in {entered_year}",
@@ -318,11 +318,13 @@ def yearly_stats_figs(selected_statistics, entered_year):
                                         "Level of Injury: %{x}<br>" +       
                                         "Number of Incidents: %{y}<extra></extra>"
             )
-            fig10.update_layout(title={
-                'xanchor': 'center',
-                'x': 0.5, 
-                #'y': 0.97, 'pad':{'t':30, 'b':10}
-            },   
+            fig10.update_layout(
+                      font=dict(size=14),
+                      title={
+                          'xanchor': 'center',
+                          'x': 0.5, 
+                          #'y': 0.97, 'pad':{'t':30, 'b':10}
+                      },   
                 margin=dict(r=40, l=70)
             )
 
@@ -338,7 +340,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
                 labels={"index" : 'Time of Day'},
                 title= 'Events by Time of day'
                 )
-            fig11.update_layout(title_x = 0.5, title_y = 0.95,
+            fig11.update_layout(title_x = 0.5, title_y = 0.95, font=dict(size=14),
                 legend=dict(orientation="h",
                 yanchor="top",
                 y=1.15,
@@ -370,7 +372,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
             )
                                 
 
-            fig12.update_layout(title_x= 0.5,
+            fig12.update_layout(title_x= 0.5, font=dict(size=14),
                                 margin=dict(r=40, l=70)
         
             )     
@@ -394,7 +396,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
                 category_orders={'Level_of_Injury': values},
                 labels={'Number_of_Incidents' : 'Number of Incidents', 'Occurred_Year':'Year'},
             )
-            fig13.update_layout(legend_title_text='',  
+            fig13.update_layout(legend_title_text='', font=dict(size=14), 
                 title={'text': 'Events by Year',
                 'x': 0.5,  # Center the title horizontally
                 'y': 0.97,
@@ -486,6 +488,7 @@ def loi_stats_figs(entered_loi):
         )
                     
     fig5.update_layout(
+        font=dict(size=14),
         title_x= 0.5, 
         title={'text': f'{title_text} <br> Events by Neighbourhood',
             'x': 0.5, 'y': 0.93,                                                                               # Center the title horizontally
@@ -546,6 +549,7 @@ def loi_stats_figs(entered_loi):
     )
 
     fig6.update_layout(
+        font=dict(size=14),  
         title={'text': f'{title_text} <br> Events by Ward and Councillor ',
             'x': 0.5, 'y':0.93,                                                                               # Center the title horizontally
             'xanchor': 'center'},                                                                   # Anchor the title to the center
@@ -585,7 +589,7 @@ def loi_stats_figs(entered_loi):
         category_orders={'Level_of_Injury': values},
         labels={"Number_of_Incidents" : 'Number of Incidents', 'Occurred_Year':'Year'},                                 
     )
-    fig7.update_layout( showlegend=False,
+    fig7.update_layout( showlegend=False, font=dict(size=14),
         title={'text': f'{title_text} <br> Events by Year ',
             'x': 0.5, 'y': 0.93,                                                                              
             'xanchor': 'center'},
@@ -615,6 +619,7 @@ def loi_stats_figs(entered_loi):
          
     )
     fig8.update_layout(
+        font=dict(size=14),
         showlegend=False,
         title={'text': f"{title_text} <br> Events by Month",
             'x': 0.5,  'y': 0.93,                                                                               # Center the title horizontally
