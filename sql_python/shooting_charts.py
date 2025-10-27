@@ -107,6 +107,8 @@ def yearly_stats_figs(selected_statistics, entered_year):
                             "Number of Incidents: %{y}<extra></extra>"
         ) 
 
+        fig.update_xaxes(tickangle=-45)
+
         # Select data based on the entered year
         df_division_peryear = df_peryear[['Division', 'Level_of_Injury']].groupby('Division').count()
         df_division_peryear= df_division_peryear['Level_of_Injury'].sort_values(ascending =False)       # to series
@@ -602,7 +604,8 @@ def loi_stats_figs(entered_loi):
                     "Year: %{x}<br>" +
                     "Number of Incidents: %{y}<extra></extra>"
     ) 
-
+ 
+    
 
     # Month - LoI
     df_month_LoI = df_LoI[['Occurred_Month', 'Level_of_Injury', 'ID']].groupby(['Occurred_Month','Level_of_Injury']).count() 
@@ -633,6 +636,7 @@ def loi_stats_figs(entered_loi):
                             "Month: %{x}<br>" +
                             "Number of Incidents: %{y}<extra></extra>"
     ) 
+    fig8.update_xaxes(tickangle=-45)
 
     fig9 = px.scatter_map(df_LoI,
         template = 'plotly_dark',
