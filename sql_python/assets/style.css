@@ -99,7 +99,7 @@
         white-space: nowrap !important;
 
     .js-plotly-plot text {
-        font-size: 2vw !important;   /* slightly larger for mobile */
+        font-size: 5vw !important;   /* slightly larger for mobile */
     }
 
     .chart-height1 {
