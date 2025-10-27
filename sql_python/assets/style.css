@@ -97,6 +97,7 @@
 
     .js-plotly-plot .legend {
         white-space: nowrap !important;
+    }
 
     .js-plotly-plot text {
         font-size: 50vw !important;   /* slightly larger for mobile */
@@ -106,7 +107,6 @@
         height: auto;
     }
         
-    }
     .chart-height2 {
         height: auto;
     }
