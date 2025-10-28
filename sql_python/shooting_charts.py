@@ -167,9 +167,9 @@ def yearly_stats_figs(selected_statistics, entered_year):
             },
             legend=dict(orientation="h",
             yanchor="top",
-            y=1.17,
+            y=1.18,
             xanchor="center",
-            x=0.5
+            x=0.48
             ),
             margin=dict(t=160, r=20, b=185, l=100)
         )
