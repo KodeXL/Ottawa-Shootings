@@ -95,7 +95,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
                 'xanchor': 'center'},                                                                   # Anchor the title to the center
             legend=dict(orientation="h",
             yanchor="top",
-            y=1.15,
+            y=1.18,
             xanchor="center",
             x=0.48
             ),
