@@ -228,10 +228,10 @@ def yearly_stats_figs(selected_statistics, entered_year):
             xanchor="center",
             x=0.48
             ), 
-            margin=dict(t=160, r=20, l=20)                                                                             # Adjust height as needed
+            margin=dict(t=160, r=20, b=185, l=100)                                                                             # Adjust height as needed
         )
 
-        fig3.update_xaxes(
+        fig3.update_xaxes(auto
             tickvals=pivot_Top10Wards_peryear_df_melted['ShortLabel'],
             tickangle=-40
         )
