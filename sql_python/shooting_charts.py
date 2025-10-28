@@ -171,7 +171,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
             xanchor="center",
             x=0.5
             ),
-            margin=dict(t=160, r=30, b=185, l=100)
+            margin=dict(t=160, r=20, b=185, l=100)
         )
         fig2.update_xaxes(automargin=False,
             tickvals=pivot_Top10N_df_melted['ShortLabel'],
