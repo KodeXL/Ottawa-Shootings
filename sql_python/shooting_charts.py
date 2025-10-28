@@ -173,7 +173,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
             ),
             margin=dict(t=160, r=20, l=20)
         )
-        fig2.update_xaxes(
+        fig2.update_xaxes(automargin=False,
             tickvals=pivot_Top10N_df_melted['ShortLabel'],
             tickangle=-40
         )
