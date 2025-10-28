@@ -100,15 +100,10 @@
     }
 
     .js-plotly-plot text {
-        font-size: 2.6vw !important;   /* slightly larger for mobile */
+        font-size: 2.55vw !important;   /* slightly larger for mobile */
     }
 
-    .js-plotly-plot {
-        padding-left: 0 !important;
-        margin-left: 0 !important;
-    }
-
-    .chart-height1 {
+      .chart-height1 {
         height: auto;
     }
         
@@ -116,7 +111,7 @@
         height: auto;
     }
     .js-plotly-plot .legendtext {
-        font-size: 2.5vw !important;
+        font-size: 2.45vw !important;
     }
 
     .dash-graph .gtitle {
