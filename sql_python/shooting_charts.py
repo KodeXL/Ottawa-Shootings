@@ -171,7 +171,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
             xanchor="center",
             x=0.5
             ),
-            margin=dict(t=160, r=20, l=40)
+            margin=dict(t=160, r=20, l=20)
         )
         fig2.update_xaxes(
             tickvals=pivot_Top10N_df_melted['ShortLabel'],
@@ -228,7 +228,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
             xanchor="center",
             x=0.48
             ), 
-            margin=dict(t=160, r=20, l=40)                                                                             # Adjust height as needed
+            margin=dict(t=160, r=20, l=20)                                                                             # Adjust height as needed
         )
 
         fig3.update_xaxes(
@@ -495,7 +495,7 @@ def loi_stats_figs(entered_loi):
         title={'text': f'{title_text} <br> Events by Neighbourhood',
             'x': 0.5, 'y': 0.93,                                                                               # Center the title horizontally
             'xanchor': 'center'},                                                                    # Anchor the title to the center}
-        margin=dict(t=120, r=20, l=40 ),
+        margin=dict(t=120, r=20, l=20 ),
         showlegend=False
     )
     fig5.update_xaxes(
@@ -555,7 +555,7 @@ def loi_stats_figs(entered_loi):
         title={'text': f'{title_text} <br> Events by Ward and Councillor ',
             'x': 0.5, 'y':0.93,                                                                               # Center the title horizontally
             'xanchor': 'center'},                                                                   # Anchor the title to the center
-        margin=dict(t=120, r=20, l=40 ),
+        margin=dict(t=120, r=20, l=20 ),
         showlegend=False)
     
     fig6.update_xaxes(
