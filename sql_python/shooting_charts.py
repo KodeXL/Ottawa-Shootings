@@ -495,10 +495,10 @@ def loi_stats_figs(entered_loi):
         title={'text': f'{title_text} <br> Events by Neighbourhood',
             'x': 0.5, 'y': 0.93,                                                                               # Center the title horizontally
             'xanchor': 'center'},                                                                    # Anchor the title to the center}
-        margin=dict(t=120, r=20, l=20 ),
+        margin=dict(t=120, r=20, b=185, l=100),
         showlegend=False
     )
-    fig5.update_xaxes(
+    fig5.update_xaxes(automargin=False,
             tickvals=pivot_Top10N_LoI_df_melted['ShortLabel'],
             #ticktext=[label.replace(" - ", "<br>") for label in pivot_Top10N_LoI_df_melted['Neighbourhood']],
             tickangle=-40
@@ -555,10 +555,10 @@ def loi_stats_figs(entered_loi):
         title={'text': f'{title_text} <br> Events by Ward and Councillor ',
             'x': 0.5, 'y':0.93,                                                                               # Center the title horizontally
             'xanchor': 'center'},                                                                   # Anchor the title to the center
-        margin=dict(t=120, r=20, l=20 ),
+        margin=dict(t=120, r=20, b=185, l=100),
         showlegend=False)
     
-    fig6.update_xaxes(
+    fig6.update_xaxes(automargin=False,
             tickvals=pivot_Top10Wards_LoI_melted['ShortLabel'],
             tickangle=-40
     )
