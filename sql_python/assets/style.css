@@ -1,3 +1,7 @@
+.chart-height {
+    height: 18vh !important;
+}
+
 .chart-height1 {
     height: auto;
 }
