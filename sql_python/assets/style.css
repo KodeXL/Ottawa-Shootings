@@ -12,7 +12,7 @@
 }
 
 .js-plotly-plot .hoverlayer .hovertext text {
-  font-size: 10% !important;              /* scales with screen width */
+  font-size: 0.8vw !important;              /* scales with screen width */
 }
 
 
