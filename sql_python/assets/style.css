@@ -8,11 +8,11 @@
 
 /* Global chart text size */
 .js-plotly-plot text {
-  font-size: 77% !important;   /* scales with screen width */
+  font-size: 81% !important;   /* scales with screen width */
 }
 
 .js-plotly-plot .hoverlayer .hovertext text {
-  font-size: 0.8vw !important;              /* scales with screen width */
+  font-size: 10% !important;              /* scales with screen width */
 }
 
 
