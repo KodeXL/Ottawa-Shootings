@@ -8,7 +8,7 @@
 
 /* Global chart text size */
 .js-plotly-plot text {
-  font-size: 10% !important;   /* scales with screen width */
+  font-size: 77% !important;   /* scales with screen width */
 }
 
 .js-plotly-plot .hoverlayer .hovertext text {
@@ -17,7 +17,7 @@
 
 
 .responsive-dropdown-loi {
-    width: 30vw;              /* 30% of viewport width */
+    width: 104%;              /* 30% of viewport width */
 }
 
 .main-navbar .navbar-brand {
