@@ -1,4 +1,4 @@
-.chart-height {
+.chart-height .js-plotly-plot .plot-container {
     height: 18vh !important;
 }
 
