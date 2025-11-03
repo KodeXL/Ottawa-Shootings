@@ -102,6 +102,10 @@
         font-size: 3.5vw !important;
     }
 
+    .indicator-graph .js-plotly-plot text {
+        font-size: 2vw !important;  /* allows Plotly’s internal size to take effect */
+    }
+
     .js-plotly-plot .legend {
         white-space: nowrap !important;
     }
