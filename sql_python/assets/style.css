@@ -15,6 +15,10 @@
   font-size: 81% !important;   /* scales with screen width */
 }
 
+.js-plotly-plot .indicatorlayer text {
+  font-size: inherit !important;  /* allows Plotly’s internal size to take effect */
+}
+
 .js-plotly-plot .hoverlayer .hovertext text {
   font-size: 0.8vw !important;              /* scales with screen width */
 }
