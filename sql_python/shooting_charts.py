@@ -299,7 +299,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
         ) 
         return [
             dbc.Row([
-                dbc.Col(dcc.Graph( figure=fig15, className="indicator-graph"),
+                dbc.Col(dcc.Graph(figure=fig15, className="indicator-graph"),
                         xs=12, sm=12, md=12, lg=6, xl=6,
                         className="chart-height"
                 ),
@@ -482,8 +482,8 @@ def yearly_stats_figs(selected_statistics, entered_year):
                     
             return [
                 dbc.Row([
-                    dbc.Col(dcc.Graph(figure=fig14, className="indicator-graph"), 
-                            
+                    dbc.Col(dcc.Graph(figure=fig14, className="indicator-graph"),
+                    className="chart-height"        
                     )
                 ], className="mb-4 g-4"),
                 dbc.Row([
