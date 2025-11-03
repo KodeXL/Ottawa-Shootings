@@ -16,7 +16,7 @@
 }
 
 .indicator-graph .js-plotly-plot text {
-  font-size: 8vw !important;  /* allows Plotly’s internal size to take effect */
+  font-size: 2vw !important;  /* allows Plotly’s internal size to take effect */
 }
 
 .js-plotly-plot .hoverlayer .hovertext text {
