@@ -9,7 +9,7 @@ from sql_python.shooting_charts import update_input_container, yearly_stats_figs
 load_figure_template('CYBORG')
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #registered page for multi-page app
-register_page(__name__, name = "Yearly Stats", path='/')  # set the path to the root URL
+register_page(__name__, name = "Overall  Stats", path='/')  # set the path to the root URL
 
 # Initiaite a dash application
 # app = dash.Dash(__name__, external_stylesheets= [dbc.themes.CYBORG],
@@ -19,8 +19,8 @@ register_page(__name__, name = "Yearly Stats", path='/')  # set the path to the 
 
 # Create the dropdown and multi select menu options
 dropdown_options = [
-     {'label': 'Yearly Statistics', 'value': 'Yearly Statistics'},
-     {'label': 'Overall Statistics', 'value': 'Overall Statistics'}
+     {'label': 'Overall Statistics', 'value': 'Overall Statistics'},
+     {'label': 'Yearly Statistics', 'value': 'Yearly Statistics'}
 ]
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 layout =  dbc.Container([
@@ -50,7 +50,7 @@ layout =  dbc.Container([
 def reset_dropdown_on_home(href):
     # When user goes to the home page ('/'), reset dropdown to "Yearly Statistics"
     if href.endswith('/'):
-        return 'Yearly Statistics'
+        return 'Overall Statistics'
     return no_update
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
