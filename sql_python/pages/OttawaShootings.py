@@ -39,7 +39,7 @@ layout =  dbc.Container([
         )
     ], className="mt-4 mb-4"),           
     
-    dbc.Row([ html.Div(id='graphs-container', className='chart-height1') 
+    dbc.Row([ html.Div(id='graphs-container') 
     ], className="mb-4 mt-4"),
 ], fluid=True)
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------
