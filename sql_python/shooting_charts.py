@@ -77,7 +77,8 @@ def yearly_stats_figs(selected_statistics, entered_year):
         else:
             percent_change = np.round(((current_year_total - previous_year_total) / previous_year_total) * 100, 2) 
             color = "danger" if percent_change > 0 else "success"
-            icon = "bi-caret-up-fill" if percent_change > 0 else "bi-caret-down-fill"
+            icon = "bi bi-caret-up-fill" if percent_change > 0 else "bi bi-caret-down-fill"
+            icon1 = "bi bi-graph-up-arrow" if percent_change > 0 else "bi bi-graph-down-arrow"      
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
         df_month_peryear = df_peryear[['Occurred_Month', 'Level_of_Injury', 'ID']].groupby(['Occurred_Month','Level_of_Injury'], as_index=False).count() 
         pivot_month_peryear_df = df_month_peryear.pivot(index='Occurred_Month', columns='Level_of_Injury', values='ID')
@@ -307,7 +308,9 @@ def yearly_stats_figs(selected_statistics, entered_year):
                     dbc.Card(
                         dbc.CardBody(
                             [ 
-                                html.H3(f"Previous Year: {previous_year_display}"),
+                                html.H3(
+                                    [html.I(className=icon1), f"Previous Year: {previous_year_display}"]
+                                ),
                                 html.H4(
                                     [html.I(className=icon), f"{percent_change}"],
                                     className=f"text-{color}"
