@@ -310,13 +310,13 @@ def yearly_stats_figs(selected_statistics, entered_year):
                         dbc.CardBody(
                             [ 
                                 html.H3(
-                                    [html.I(className=icon1), f"Previous Year: {previous_year_display}"]
+                                    [html.I(className= f"me-2 {icon1}"), f"Previous Year: {previous_year_display}"]
                                 ),
                                 html.H4(
                                     [html.I(className=icon), f"{percent_change}"],
                                     className=f"text-{color}"
                                 ),
-                            ], className="chart-height"
+                            ], className= f"chart-height border-start border-{color} border-5"
                         ),
                         className="text-center m-4 bg-secondary text-white")
                 ], xs=12, sm=12, md=12, lg=6, xl=6)
