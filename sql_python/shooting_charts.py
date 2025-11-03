@@ -74,6 +74,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
             percent_change = "NA"
             color = "white"
             icon = "bi-dash-lg"
+            icon1 = "bi bi-graph-down-arrow"
         else:
             percent_change = np.round(((current_year_total - previous_year_total) / previous_year_total) * 100, 2) 
             color = "danger" if percent_change > 0 else "success"
