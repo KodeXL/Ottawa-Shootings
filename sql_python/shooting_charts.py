@@ -5,22 +5,11 @@ import dash
 from dash import dcc, html
 from sqlalchemy import create_engine, text
 import dash_bootstrap_components as dbc
+import plotly.graph_objects as go
+import numpy as np
 
 
 
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Create an SQLAlchemy engine
-# user = 'root'
-# password = 'XXXXXXXXX'
-# host = 'localhost'
-# database = 'Data'
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-# Create an SQLAlchemy engine
-# engine = create_engine(f'mysql+mysqlconnector://{user}:{password}@{host}/{database}')
-
-# with engine.connect() as conn:
-#     df = pd.read_sql(text("SELECT * FROM shootingsottawa"), con=conn)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 df = pd.read_csv("https://raw.githubusercontent.com/KodeXL/Ottawa-Shootings/refs/heads/main/sql_python/assets/shootingsottawa.csv")
 
@@ -75,10 +64,41 @@ def shorten_neighbourhood(name):
 def yearly_stats_figs(selected_statistics, entered_year):
     if selected_statistics == 'Yearly Statistics' and entered_year:
         df_peryear = df[df['Occurred_Year'] == int(entered_year)]
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        current_year_total = len(df_peryear)
+        previous_year_total = len(df[df['Occurred_Year'] == int(entered_year) - 1])
+        previous_year_display = (
+            f"{previous_year_total} Shootings" if previous_year_total != 0 else "No Data Available"
+        )
+        if previous_year_total == 0:
+            percent_change = "NA"
+            color = "white"
+            icon = "bi-dash-lg"
+        else:
+            percent_change = np.round(((current_year_total - previous_year_total) / previous_year_total) * 100, 2) 
+            color = "danger" if percent_change > 0 else "success"
+            icon = "bi-caret-up-fill" if percent_change > 0 else "bi-caret-down-fill"
+#---------------------------------------------------------------------------------------------------------------------------------------------------------
         df_month_peryear = df_peryear[['Occurred_Month', 'Level_of_Injury', 'ID']].groupby(['Occurred_Month','Level_of_Injury'], as_index=False).count() 
         pivot_month_peryear_df = df_month_peryear.pivot(index='Occurred_Month', columns='Level_of_Injury', values='ID')
         pivot_month_peryear_df = pivot_month_peryear_df.reset_index()         
         pivot_month_peryear_df_melted = pivot_month_peryear_df.melt(id_vars='Occurred_Month', var_name='Level_of_Injury', value_name='Number_of_Incidents')
+        
+        fig15 = go.Figure(go.Indicator(
+            mode = "number",
+            value = current_year_total,
+            title = {"text": "Total Shootings", "font": {"size": 18, "color": "white"}},
+            number = {"font": {"size": 48, "color": "white"}},
+            domain = {'x': [0, 1], 'y': [0, 1]}
+        ))
+
+        fig15.update_layout(
+            paper_bgcolor= 'rgba(0,0,0,0)',            
+            #plot_bgcolor="#F65757",     # your blue background
+            margin=dict(t=20, b=0, l=0, r=0),
+            font=dict(family="Open Sans, sans-serif", color="black"),
+        )
+              
         fig = px.bar(pivot_month_peryear_df_melted, x ='Occurred_Month', y = 'Number_of_Incidents',
             template = 'plotly_dark',
             color = 'Level_of_Injury',
@@ -279,6 +299,25 @@ def yearly_stats_figs(selected_statistics, entered_year):
         ) 
         return [
             dbc.Row([
+                dbc.Col(dcc.Graph( figure=fig15, className="dash-graph chart-height"),
+                        xs=12, sm=12, md=12, lg=6, xl=6
+                ),
+                dbc.Col([ 
+                    dbc.Card(
+                        dbc.CardBody(
+                            [ 
+                                html.H3(f"Previous Year: {previous_year_display}"),
+                                html.H4(
+                                    [html.I(className=icon), f"{percent_change}"],
+                                    className=f"text-{color}"
+                                ),
+                            ], className="chart-height"
+                        ),
+                        className="text-center m-4 bg-secondary text-white")
+                ], xs=12, sm=12, md=12, lg=6, xl=6)
+            ], className=" mb-1 g-4"),
+                  
+            dbc.Row([
                 dbc.Col(dcc.Graph( figure=fig), 
                         xs=12, sm=12, md=12, lg=6, xl=6,
                         className="chart-height2"
@@ -288,6 +327,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
                         className="chart-height2"
                 )
             ], className=" mb-4 g-4"),
+                  
             dbc.Row([
                 dbc.Col(dcc.Graph( figure=fig2),
                         xs=12, sm=12, md=12, lg=6, xl=6,
@@ -298,6 +338,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
                         className="chart-height2"
                 ) 
             ], className="mb-4 g-4 "),
+                  
             dbc.Row([
                 dbc.Col(dcc.Graph( figure=fig4), 
                         xs=12, sm=12, md=12, lg=12, xl=12,
@@ -310,6 +351,22 @@ def yearly_stats_figs(selected_statistics, entered_year):
             # Create and display graphs for Overall Statistics
             # Level of Injury - Overall
             LoI = df['Level_of_Injury'].value_counts()
+            total = LoI.sum()
+                  
+            fig14 = go.Figure(go.Indicator(
+                      mode = "number",
+                      value = total,
+                      title = {"text": "Total Shootings", "font": {"size": 18}},
+                      number = {"font": {"size": 48, "color": "white"}},
+                      domain = {'x': [0, 1], 'y': [0, 1]}
+            ))
+            fig14.update_layout(
+                          paper_bgcolor='rgba(0,0,0,0)',      
+                          #plot_bgcolor="#F65757",     # your blue background
+                          margin=dict(t=20, b=0, l=0, r=0),
+                          font=dict(family="Open Sans, sans-serif", color="white"),
+            )      
+                  
             fig10 = px.bar(LoI, x = LoI.index, y = LoI.values, text = LoI.values,
                 template = 'plotly_dark',
                 title='Events by Level of Injury',
@@ -423,6 +480,11 @@ def yearly_stats_figs(selected_statistics, entered_year):
             
                     
             return [
+                dbc.Row([
+                    dbc.Col(dcc.Graph(figure=fig14, className="dash-graph chart-height"), 
+                            
+                    )
+                ], className="mb-4 g-4"),
                 dbc.Row([
                     dbc.Col(dcc.Graph(figure=fig10), 
                             xs=12, sm=12, md=12, lg=6, xl=6,
