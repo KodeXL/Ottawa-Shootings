@@ -7,6 +7,37 @@ app = Dash(__name__,
            use_pages=True)
 server = app.server
 
+app.index_string = '''
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Dash App</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2EL6EN1XKF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2EL6EN1XKF', {'send_page_view': false});
+    </script>
+
+    {%metas%}
+    {%favicon%}
+    {%css%}
+  </head>
+  <body>
+    {%app_entry%}
+    <footer>
+      {%config%}
+      {%scripts%}
+      {%renderer%}
+    </footer>
+  </body>
+</html>
+'''
+
 # define navigation bar
 navbar = dbc.NavbarSimple(
     children=[
