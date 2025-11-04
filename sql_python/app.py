@@ -66,8 +66,16 @@ app.layout = html.Div([
     dcc.Location(id="url"),
     navbar,
     page_container,
-    footer
+    footer,
+    html.Div(id="analytics")
 ])
+
+@app.callback(
+    Output("analytics", "children"),
+    Input("url", "pathname")
+)
+def track_pageview(pathname):
+    return html.Script(f"gtag('event', 'page_view', {{'page_path': '{pathname}'}});")
 
 if __name__ == '__main__':
     app.run() #debug=True
