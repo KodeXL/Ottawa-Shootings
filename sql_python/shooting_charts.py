@@ -313,7 +313,7 @@ def yearly_stats_figs(selected_statistics, entered_year):
                                     [html.I(className= f"me-2 {icon1}"), f"Previous Year: {previous_year_display}"]
                                 ),
                                 html.H4(
-                                    [html.I(className=icon), f"{percent_change}"],
+                                    [html.I(className=icon), f"{percent_change}%"],
                                     className=f"text-{color}"
                                 ),
                             ], className= f"chart-height border-start border-{color} border-5"
